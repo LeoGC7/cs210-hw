@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.IO;
 
 class Program
 {
@@ -37,7 +38,10 @@ class Program
 
             if (userAnswer == 4)
             {
-
+                Console.WriteLine("Enter the file name: ");
+                Journal save = new Journal();
+                save.SaveToFile();
+                
             }
 
             if (userAnswer == 5)

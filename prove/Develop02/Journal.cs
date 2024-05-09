@@ -1,4 +1,9 @@
 using System;
+using System.IO;
+using System.IO.Enumeration;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
+
 
 public class Journal {
     // objects
@@ -18,20 +23,44 @@ public class Journal {
 
     public void DisplayAll()
     {
-        foreach (Entry entry in _entries)
+        foreach (Entry userInput in _entries)
         {
-            Console.WriteLine($"Date: {entry._date}");
-            Console.WriteLine($"Prompt: {entry._promptText}");
-            Console.WriteLine($"Answer: {entry._entryText}");
-            Console.WriteLine();
+            Console.WriteLine($"Date: {userInput._date}");
+            Console.WriteLine($"Prompt: {userInput._promptText}");
+            Console.WriteLine($"Answer: {userInput._entryText}\n");
         }
 
     }
 
-    public void SaveToFile(string file)
-    {
+    public void SaveToFile()
+    {   
+        
+        string fileName = "C:/Users/Desktop/Desktop/" + Console.ReadLine() + ".txt";
 
+        try
+        {
+            using (StreamWriter outputFile = new StreamWriter(fileName))
+            {   
+                foreach(Entry entry in _entries)
+                {
+                    outputFile.WriteLine($"Date: {entry._date}");
+                    outputFile.WriteLine($"Prompt: {entry._promptText}");
+                    outputFile.WriteLine($"Answer: {entry._entryText}\n");
+
+                    Console.WriteLine($"Date: {entry._date}");
+                    Console.WriteLine($"Prompt: {entry._promptText}");
+                    Console.WriteLine($"Answer: {entry._entryText}\n");
+                }
+            }
+
+            Console.WriteLine($"Journal entries saved to '{fileName}' successfully.");           
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error saving journal entries: {ex.Message}");
+        }
     }
+
 
     public void LoadFromFile(string file)
     {
