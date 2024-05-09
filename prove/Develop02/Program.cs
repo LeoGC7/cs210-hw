@@ -39,8 +39,7 @@ class Program
             if (userAnswer == 4)
             {
                 Console.WriteLine("Enter the file name: ");
-                Journal save = new Journal();
-                save.SaveToFile();
+                journal.SaveToFile();
                 
             }
 

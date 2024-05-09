@@ -33,12 +33,9 @@ public class Journal {
     }
 
     public void SaveToFile()
-    {   
-        
+    {                  
         string fileName = "C:/Users/Desktop/Desktop/" + Console.ReadLine() + ".txt";
 
-        try
-        {
             using (StreamWriter outputFile = new StreamWriter(fileName))
             {   
                 foreach(Entry entry in _entries)
@@ -54,11 +51,7 @@ public class Journal {
             }
 
             Console.WriteLine($"Journal entries saved to '{fileName}' successfully.");           
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error saving journal entries: {ex.Message}");
-        }
+
     }
 
 
