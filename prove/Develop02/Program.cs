@@ -2,6 +2,8 @@ using System;
 using System.ComponentModel;
 using System.IO;
 
+// As additional creativity I add an option to delete a file
+
 class Program
 {
     static void Main(string[] args)
@@ -15,7 +17,7 @@ class Program
         bool keepRunning = true;
         while (keepRunning)
         {
-            Console.WriteLine("1. Write | 2. Display | 3. Load | 4. Save | 5. Quit \n");
+            Console.WriteLine("1. Write | 2. Display | 3. Load | 4. Save | 5. Delete | 6. Quit \n");
             Console.Write("What would you like to do? ");
             int userAnswer = int.Parse(Console.ReadLine());
 
@@ -45,6 +47,12 @@ class Program
             }
 
             if (userAnswer == 5)
+            {
+                Console.WriteLine("Enter the file name that you want to DELETE:");
+                journal.DeleteAFile();
+            }
+
+            if (userAnswer == 6)
             {
                 keepRunning = false;
             }

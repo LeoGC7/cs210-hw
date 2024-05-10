@@ -54,7 +54,6 @@ public class Journal {
 
     }
 
-
     public void LoadFromFile()
     {
         string filename = Console.ReadLine() + ".txt";
@@ -63,6 +62,49 @@ public class Journal {
         foreach (string line in lines)
         {
             Console.WriteLine(line);
+        }
+    }
+
+        public void DeleteAFile()
+    {
+        string filename = "C:/Users/Desktop/Desktop/" + Console.ReadLine() + ".txt";
+        Console.WriteLine();
+
+        try
+        {
+            if (File.Exists(filename))
+            {
+                 Console.WriteLine($"You're about to DELETE {filename}. Are you sure? [Y]es / [N]o");
+                string confirmation = Console.ReadLine();
+
+                if (confirmation.ToLower() == "y")
+                {
+                    File.Delete(filename);
+                    Console.WriteLine($"{filename} deleted successfullly\n");
+                }
+
+                else if (confirmation.ToLower() == "n")
+                {
+                    Console.WriteLine("The file WAS NOT deleted\n");
+                }
+
+                else
+                {
+                    Console.WriteLine("Invalid Option\n");
+                }
+            }
+
+            else
+            {
+                Console.WriteLine($"{filename} does not exist.");
+            }
+
+
+        }
+        
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error deleting file {filename}: {ex.Message}");
         }
     }
 }
