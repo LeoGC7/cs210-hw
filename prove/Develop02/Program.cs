@@ -33,7 +33,8 @@ class Program
 
             if (userAnswer == 3)
             {
-
+                Console.WriteLine("Enter the file name you want to load: ");
+                journal.LoadFromFile();
             }
 
             if (userAnswer == 4)

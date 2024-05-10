@@ -55,8 +55,14 @@ public class Journal {
     }
 
 
-    public void LoadFromFile(string file)
+    public void LoadFromFile()
     {
+        string filename = Console.ReadLine() + ".txt";
+        string[] lines = System.IO.File.ReadAllLines(filename);
 
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
     }
 }
