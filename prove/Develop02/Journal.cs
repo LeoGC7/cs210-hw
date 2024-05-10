@@ -74,7 +74,7 @@ public class Journal {
         {
             if (File.Exists(filename))
             {
-                 Console.WriteLine($"You're about to DELETE {filename}. Are you sure? [Y]es / [N]o");
+                Console.WriteLine($"You're about to DELETE {filename}. Are you sure? [Y]es / [N]o");
                 string confirmation = Console.ReadLine();
 
                 if (confirmation.ToLower() == "y")
