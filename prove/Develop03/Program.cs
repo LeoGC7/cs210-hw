@@ -2,6 +2,8 @@ using System;
 using System.Net.Quic;
 using System.Text.RegularExpressions;
 
+//For additional creativity I added a test to check if the user memorized the scripture by typing it
+
 class Program
 {
     static void Main(string[] args)
