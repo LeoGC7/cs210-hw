@@ -14,6 +14,6 @@ public class Assignment
     //methods
     public string GetSummary()
     {
-        return $"{_topic} by {_name}";
+        return $"{_name} - {_topic}";
     }
 }

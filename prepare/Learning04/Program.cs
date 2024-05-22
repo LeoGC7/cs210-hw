@@ -4,6 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
+
+        Assignment assignment = new Assignment("Samuel Bennett", "Multiplication");
+
+        Console.WriteLine(assignment.GetSummary() + "\n");
+
         MathAssignment mathAssignment = new MathAssignment("Roberto Rodriguez", "Fractions", "Section 7.3", "9-19");
 
         Console.WriteLine(mathAssignment.GetMathSummary());
